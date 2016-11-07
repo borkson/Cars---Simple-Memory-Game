@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    text-align: center;
+    background-image: url(../images/car_bg.jpg);
+    color: #fff;
+}
+
+.block {
+    display: inline-block;
+    border: 1px solid #fff;
+    height: 180px;
+    width: 200px;
+    margin: 1px;
+    background-image: url(../images/car_bg.jpg);
+    background-size: cover;
+    border-radius: 2px;
+}
+
+a {
+    color: #fff;
+}
