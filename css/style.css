@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -9,17 +10,39 @@ body {
     color: #fff;
 }
 
-.block {
-    display: inline-block;
-    border: 1px solid #fff;
-    height: 180px;
-    width: 200px;
-    margin: 1px;
-    background-image: url(../images/car_bg.jpg);
-    background-size: cover;
-    border-radius: 2px;
-}
-
 a {
     color: #fff;
+}
+
+.block, .face-down, .face-up {
+    height: 180px;
+    width: 200px;
+}
+
+.block {
+    display: inline-block;
+    position: relative;
+    margin: 1px;
+}
+
+.face-up {
+    z-index: 2;
+}
+
+.face-down {
+    background-image: url(../images/car_bg.jpg);
+    background-size: cover;
+    z-index: 3;
+}
+
+.face-up, .face-down {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 2px;
+    border: 1px solid #fff;
+}
+
+.visible .face-down {
+    z-index: 1;
 }
