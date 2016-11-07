@@ -1,0 +1,46 @@
+@mixin ul-nostyle {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+@mixin hover-style($color) {
+    &:hover {
+        background: lighten($color, 10%);
+    }
+}
+@mixin tablet {
+     @media (min-width: #{$tablet-width}){
+        @content;
+    }
+}
+// other
+@mixin tablet {
+     @media (min-width: #{$tablet-width}){
+        @content;
+    }
+}
+@mixin tablet2 {
+     @media (max-width: #{$tablet2-width}){
+        @content;
+    }
+}
+@mixin tablet3 {
+     @media (min-width: #{$tablet-width}) and (max-width: #{$tablet-width-max:}){
+        @content;
+    }
+}
+@mixin tablet-telefon {
+     @media (max-width: #{$tablet-width-max}){
+        @content;
+    }
+}
+@mixin telefon {
+     @media (max-width: #{$phone-width}){
+        @content;
+    }
+}
+@mixin telewizor {
+     @media (min-width: #{$hd-width}){
+        @content;
+    }
+}

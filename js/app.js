@@ -1,8 +1,8 @@
 $(function() {
 
     $(document).ready(function() {
-        var row = 3; // od usera
-        var col = 6; // od usera
+        var row = 3;
+        var col = 6;
         var divSizeWidth = '200px';
         var divSizeHeight = '180px';
         var size = row * col;
@@ -19,19 +19,19 @@ $(function() {
             'images/trevita.png',
             'images/veneno.png'
         ];
-        //zawiera wszystkie 18 elementów
+        //Merge the contents of two arrays together into the first array (total 18 images)
         var imgRandomArr = $.merge(imgFaces, imgFaces);
 
-        var outerDiv = $('<div>'); // kontener na obrazki
-        outerDiv.height(row * divSizeHeight).width(col * divSizeWidth); // ustawiasz wymiar kontenera
-        for (var i = 0; i < size; i++) { // petla do dodawania obrazkow do kontenera
-            var randomImg = Math.floor(Math.random() * imgRandomArr.length); //losuje spośród 18 zdjęc
+        var outerDiv = $('<div>'); // container for images
+        outerDiv.height(row * divSizeHeight).width(col * divSizeWidth); // container size
+        for (var i = 0; i < size; i++) { // loop for add images to container
+            var randomImg = Math.floor(Math.random() * imgRandomArr.length); //shuffle img in container
             var carImg = imgRandomArr[randomImg];
             // Remove from faces array so we don't re-pick
             imgFaces.splice(randomImg, 1);
-            var div = $('<div>').data('index', i); // tworzysz div
-            div.addClass('block'); // ustawiasz mu wymiar
-            outerDiv.append(div); // dodajesz do kontenera
+            var div = $('<div>').data('index', i);
+            div.addClass('block');
+            outerDiv.append(div);
             var faceUp = $('<div>').addClass('face-up');
             var faceDown = $('<div>').addClass('face-down');
             div.append(faceUp);
@@ -45,9 +45,11 @@ $(function() {
         //flip over the cards
         var numFlipped = 0;
         var cards = $('.block');
+        //variable with last card index(data i)
         var lastCardClick = null;
         cards.on('click', function() {
             if (numFlipped < 2) {
+                //flip the card if it hasn't already been turned face up.
                 if (lastCardClick != $(this).data('index') || !$(this).hasClass('visible')) {
                     $(this).addClass('visible');
                     numFlipped++;
