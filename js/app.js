@@ -29,7 +29,7 @@ $(function() {
             var carImg = imgRandomArr[randomImg];
             // Remove from faces array so we don't re-pick
             imgFaces.splice(randomImg, 1);
-            var div = $('<div>'); // tworzysz div
+            var div = $('<div>').data('index', i); // tworzysz div
             div.addClass('block'); // ustawiasz mu wymiar
             outerDiv.append(div); // dodajesz do kontenera
             var faceUp = $('<div>').addClass('face-up');
@@ -40,14 +40,25 @@ $(function() {
                 'background-image': 'url(' + carImg + ')'
             });
         }
-        game.append(outerDiv); // kontener dodajesz do body
+        game.append(outerDiv); // add container to game
 
-
+        //flip over the cards
+        var numFlipped = 0;
         var cards = $('.block');
+        var lastCardClick = null;
         cards.on('click', function() {
-            $(this).addClass('visible');
+            if (numFlipped < 2) {
+                if (lastCardClick != $(this).data('index') || !$(this).hasClass('visible')) {
+                    $(this).addClass('visible');
+                    numFlipped++;
+                }
+            } else {
+                cards.removeClass('visible');
+                numFlipped = 0;
+            }
+            lastCardClick = $(this).data('index');
+        });
 
-        })
 
     });
 });
