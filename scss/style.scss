@@ -9,7 +9,7 @@
 
 body {
     text-align: center;
-    background-image: url("../images/car_bg.jpg");
+    background-color: #fff;
 }
 @media (max-width:400px) {
     a,
@@ -20,13 +20,13 @@ body {
 @media (min-width:400px) and (max-width:800px) {
     a,
     body {
-        color: black;
+        color: darkgreen;
     }
 }
 @media (min-width:800px) {
     a,
     body {
-        color: #fff;
+        color: black;
     }
 }
 
