@@ -29,7 +29,7 @@ $(function() {
             var carImg = imgRandomArr[randomImg];
             // Remove from faces array so we don't re-pick
             imgFaces.splice(randomImg, 1);
-            var div = $('<div>').data('index', i);
+            var div = $('<div>').data('index', i).data('imgName', carImg);
             div.addClass('block');
             outerDiv.append(div);
             var faceUp = $('<div>').addClass('face-up');
@@ -47,15 +47,25 @@ $(function() {
         var cards = $('.block');
         //variable with last card index(data i)
         var lastCardClick = null;
+        var lastCardElement = $('[data-index="' + lastCardClick + '"]');
         cards.on('click', function() {
             if (numFlipped < 2) {
+                // if (lastCardClick === $(this).data('index')) {
+                if (lastCardElement.data('imgName') === $(this).data('imgName')) {
+                    $(this).addClass('hide');
+                }
+
                 //flip the card if it hasn't already been turned face up.
-                if (lastCardClick != $(this).data('index') || !$(this).hasClass('visible')) {
+                else if (lastCardClick != $(this).data('index') || !$(this).hasClass('visible')) {
                     $(this).addClass('visible animated flipInY');
+                    setTimeout(function() {
+                        cards.removeClass('visible animated flipInY');
+                        numFlipped = 0;
+                    }, 2000);
                     numFlipped++;
                 }
             } else {
-                cards.removeClass('visible');
+                cards.removeClass('visible animated flipInY');
                 numFlipped = 0;
             }
             lastCardClick = $(this).data('index');

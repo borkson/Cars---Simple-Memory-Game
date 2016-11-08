@@ -65,3 +65,10 @@ body {
 .visible .face-down {
     z-index: 1;
 }
+
+.hide {
+    .face-down,
+    .face-up {
+        display: none;
+    }
+}
