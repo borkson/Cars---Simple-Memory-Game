@@ -51,7 +51,7 @@ $(function() {
             if (numFlipped < 2) {
                 //flip the card if it hasn't already been turned face up.
                 if (lastCardClick != $(this).data('index') || !$(this).hasClass('visible')) {
-                    $(this).addClass('visible');
+                    $(this).addClass('visible animated flipInY');
                     numFlipped++;
                 }
             } else {
