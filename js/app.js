@@ -98,7 +98,7 @@ $(function() {
                             numFlipped = 0;
                             lastCardClick = null;
                             timeout = null;
-                        }, 1000); //opóźnienie
+                        }, 800); //opóźnienie
                     }
                 }
             }

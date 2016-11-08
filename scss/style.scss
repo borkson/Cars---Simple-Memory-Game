@@ -10,6 +10,7 @@
 body {
     text-align: center;
     background-image: url("../images/car_bg.jpg");
+    font-family: 'Share Tech Mono', monospace;
 }
 @media (max-width:400px) {
     body {
@@ -18,12 +19,12 @@ body {
 }
 @media (min-width:400px) and (max-width:800px) {
     body {
-        color: black;
+        color: #fff;
     }
 }
 @media (min-width:800px) {
     body {
-        color: black;
+        color: #fff;
     }
 }
 
@@ -56,7 +57,7 @@ body {
     left: 0;
     top: 0;
     border-radius: 2px;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
 }
 
 .visible .face-down {
@@ -72,7 +73,7 @@ body {
 
 p {
     display: inline-block;
-    margin: 15px;
+    margin: 5px 20px;
 
     span {
         color: red;
@@ -84,4 +85,26 @@ p {
         text-decoration: none;
         color: #fff;
     }
+}
+
+#statsGame {
+    background: black;
+    width: 50%;
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px #000;
+
+    :hover {
+        transform: scale(1.08);
+    }
+}
+
+#game {
+    -webkit-animation-duration: 1.5s;
+    -ms-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
