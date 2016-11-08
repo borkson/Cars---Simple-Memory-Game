@@ -45,6 +45,23 @@ $(function() {
         }
         game.append(outerDiv); // add container to game
 
+        //zmienne dla timera
+        var gameScore = $(".score-game");
+        var timer = $("#timer");
+        gameScore.html("0 seconds");
+        var score = 0;
+        var hasGameStarted = false;
+
+        //timer function
+        function countdownTimer() {
+            if (hasGameStarted !== true) {
+                scoreTimeout = setInterval(function() {
+                    gameScore.html(++score + " seconds");
+                }, 1000);
+                hasGameStarted = true;
+            }
+        }
+
         //flip over the cards
         var numFlipped = 0;
         var cards = $('.block');
@@ -54,6 +71,8 @@ $(function() {
         //variable for setTimeout
         var timeout = null;
         cards.on('click', function() {
+
+            countdownTimer();
             // jesli ostanie klikniete zdjecie jest takie samo, nie działa timeout i nie zlicza kliknięć
             if (lastCardClick === $(this).data('index') || timeout != null) {
                 return;
@@ -84,6 +103,11 @@ $(function() {
                 }
             }
             lastCardClick = thisCard.data('index');
+
+
+
         });
+
     });
+
 });
