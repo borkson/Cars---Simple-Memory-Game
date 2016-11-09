@@ -8,28 +8,8 @@
         @content;
     }
 }
-@mixin tablet2 {
-     @media (max-width: #{$tablet2-width}){
-        @content;
-    }
-}
-@mixin tablet3 {
-     @media (min-width: #{$tablet-width}) and (max-width: #{$tablet-width-max:}){
-        @content;
-    }
-}
-@mixin tablet-tel {
-     @media (max-width: #{$tablet-width-max}){
-        @content;
-    }
-}
 @mixin tel {
      @media (max-width: #{$phone-width}){
-        @content;
-    }
-}
-@mixin tv {
-     @media (min-width: #{$hd-width}){
         @content;
     }
 }

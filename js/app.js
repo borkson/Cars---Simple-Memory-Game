@@ -52,6 +52,18 @@ $(function() {
         var score = 0;
         var hasGameStarted = false;
 
+        //flip over the cards
+        var numFlipped = 0;
+        var cards = $('.block');
+        //variable with last card index(data i)
+        //zmienna przechowująca index ostatniego klikniętego zdjęcia
+        var lastCardClick = null;
+        //variable for setTimeout
+        var timeout = null;
+        //zmiena dla tablicy podsumowującej grę
+        var resultBoard = $('#result-board');
+        var statsGame = $('#stats-game');
+
         //timer function
         function countdownTimer() {
             if (hasGameStarted !== true) {
@@ -62,16 +74,20 @@ $(function() {
             }
         }
 
-        //flip over the cards
-        var numFlipped = 0;
-        var cards = $('.block');
-        //variable with last card index(data i)
-        //zmienna przechowująca index ostatniego klikniętego zdjęcia
-        var lastCardClick = null;
-        //variable for setTimeout
-        var timeout = null;
-        cards.on('click', function() {
+        // domyślnie tablica z wynikiem jest ukryta
+        resultBoard.hide();
 
+        //funckja sprawdza czy tablica z kartami jest pusta, jesli tak wyswietla tablice z wynikiem i mozliwoscią wznowienia gry
+        function endGame() {
+            if (cards.filter('.hide').length === size) {
+                resultBoard.show().addClass('animated bounce');
+                game.hide();
+                statsGame.hide()
+                clearTimeout(scoreTimeout);
+            }
+        }
+
+        cards.on('click', function() {
             countdownTimer();
             // jesli ostanie klikniete zdjecie jest takie samo, nie działa timeout i nie zlicza kliknięć
             if (lastCardClick === $(this).data('index') || timeout != null) {
@@ -91,6 +107,7 @@ $(function() {
                             if (lastCardElement.data('imgName') === thisCard.data('imgName')) {
                                 thisCard.addClass('hide');
                                 lastCardElement.addClass('hide');
+                                endGame();
                             }
                             //jesli nie, odwróć karty
                             cards.removeClass('visible animated flipInY');
@@ -103,9 +120,6 @@ $(function() {
                 }
             }
             lastCardClick = thisCard.data('index');
-
-
-
         });
 
     });
