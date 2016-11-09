@@ -10,14 +10,14 @@ $(function() {
         var body = $('body');
         var game = $('#game');
         var imgFaces = [
-            'images/bc.png',
+            'images/918.png',
             'images/chiron.png',
-            'images/f60.png',
-            'images/ferr.png',
+            'images/laf.png',
+            'images/one77.png',
             'images/lykan.png',
-            'images/mansory.png',
-            'images/ragera.png',
-            'images/trevita.png',
+            'images/p1.png',
+            'images/rimac.png',
+            'images/egg.png',
             'images/veneno.png'
         ];
         //Merge the contents of two arrays together into the first array (total 18 images)
@@ -57,7 +57,7 @@ $(function() {
             if (hasGameStarted !== true) {
                 scoreTimeout = setInterval(function() {
                     gameScore.html(++score + " seconds");
-                }, 1000);
+                }, 1200);
                 hasGameStarted = true;
             }
         }

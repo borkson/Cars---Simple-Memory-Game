@@ -33,6 +33,9 @@ body {
 .face-up {
     height: 180px;
     width: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .block {
@@ -58,6 +61,7 @@ body {
     top: 0;
     border-radius: 2px;
     border: 2px solid #fff;
+    background-color: black;
 }
 
 .visible .face-down {
@@ -107,4 +111,12 @@ p {
     -webkit-animation-fill-mode: both;
     -ms-animation-fill-mode: both;
     animation-fill-mode: both;
+    width: 97%;
+    margin: 0 auto;
+    height: auto;
+    border: 1px solid #fff;
+    background-image: url("../images/old.jpg");
+    background-size: cover;
+    box-shadow: 0 3px 12px #000;
+    border-radius: 3px;
 }
