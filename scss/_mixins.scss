@@ -1,19 +1,8 @@
-@mixin ul-nostyle {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-@mixin hover-style($color) {
+@mixin hover-style {
     &:hover {
-        background: lighten($color, 10%);
+        transform: scale(1.03);
     }
 }
-@mixin tablet {
-     @media (min-width: #{$tablet-width}){
-        @content;
-    }
-}
-// other
 @mixin tablet {
      @media (min-width: #{$tablet-width}){
         @content;
@@ -29,17 +18,17 @@
         @content;
     }
 }
-@mixin tablet-telefon {
+@mixin tablet-tel {
      @media (max-width: #{$tablet-width-max}){
         @content;
     }
 }
-@mixin telefon {
+@mixin tel {
      @media (max-width: #{$phone-width}){
         @content;
     }
 }
-@mixin telewizor {
+@mixin tv {
      @media (min-width: #{$hd-width}){
         @content;
     }
