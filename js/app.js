@@ -63,13 +63,14 @@ $(function() {
         //zmiena dla tablicy podsumowującej grę
         var resultBoard = $('#result-board');
         var statsGame = $('#stats-game');
+        var footer = $('footer');
 
         //timer function
         function countdownTimer() {
             if (hasGameStarted !== true) {
                 scoreTimeout = setInterval(function() {
                     gameScore.html(++score + " seconds");
-                }, 1200);
+                }, 1000);
                 hasGameStarted = true;
             }
         }
@@ -80,9 +81,12 @@ $(function() {
         //funckja sprawdza czy tablica z kartami jest pusta, jesli tak wyswietla tablice z wynikiem i mozliwoscią wznowienia gry
         function endGame() {
             if (cards.filter('.hide').length === size) {
-                resultBoard.show().addClass('animated bounce');
                 game.hide();
-                statsGame.hide()
+                statsGame.hide();
+                footer.hide();
+                setTimeout(function() {
+                    resultBoard.show().addClass('animated zoomIn');
+                }, 200);
                 clearTimeout(scoreTimeout);
             }
         }
