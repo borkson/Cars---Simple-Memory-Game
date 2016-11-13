@@ -19,10 +19,10 @@ Wszystkie użyte zdjęcia mają darmową licencję do ponownego wykorzystania w 
 I used:
  * HTML
  * CSS
- * JS & jQuery
+ * JS and jQuery
  * Sass + Gulp
  
- All images are free for commercial use.
+All images are free for commercial use.
  
 ## Animacje / Animations
 
