@@ -11,7 +11,7 @@ Zasady gry nie są skomplikowane. Należy odkrywać karty  i szukać par. Odnale
 
 ## Jak powstała gra? / How I made it?
 
-Do jej stworzenia używałem niezbyt skomplikowanego kodu **HTML**. Postawiłem też środowisko dla  **Gulp'a ** do kompilacja plików  **Sass **. Cała "magia" gry to  **JS ** i  **jQuery **.
+Do jej stworzenia używałem niezbyt skomplikowanego kodu **HTML**. Postawiłem też środowisko dla  **Gulp'a** do kompilacja plików  **Sass**. Cała "magia" gry to  **JS** i  **jQuery**.
 Wszystkie użyte zdjęcia mają darmową licencję do ponownego wykorzystania w celach niekomercyjnych z modyfikacją.
 
 **eng version** 
