@@ -7,7 +7,7 @@ Zasady gry nie są skomplikowane. Należy odkrywać karty  i szukać par. Odnale
 
 **eng version** 
 
- I had to make final project at the end of the programming course in code school. You should know that **I'm big cars fan too**. Just love them... That is the reason why i choose simple game with cars :)
+ I had to make final project at the end of the programming course in code school. You should know that **I'm big cars fan too**. Just love them... That is the reason why I chose simple game with cars :)
 
 ## Jak powstała gra? / How I made it?
 
