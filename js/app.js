@@ -49,7 +49,7 @@ $(function() {
         var gameScore = $(".score-game");
         var timer = $("#timer");
         gameScore.html("0 seconds");
-        var score = 0;
+        // var score = 0;
         var hasGameStarted = false;
 
         //flip over the cards
@@ -65,15 +65,24 @@ $(function() {
         var statsGame = $('#stats-game');
         var footer = $('footer');
 
+        var score = Date.now();
         //timer function
         function countdownTimer() {
             if (hasGameStarted !== true) {
                 scoreTimeout = setInterval(function() {
-                    gameScore.html(++score + " seconds");
+                    var delta = Date.now() - score;
+                    gameScore.html(Math.floor(delta / 1000) + " seconds");
                 }, 1000);
                 hasGameStarted = true;
             }
         }
+
+        // setInterval(function() {
+        //     var delta = Date.now() - start; // milliseconds elapsed since start
+        //     output(Math.floor(delta / 1000)); // in seconds
+        //     // alternatively just show wall clock time:
+        //     output(new Date().toUTCString());
+        // }, 1000);
 
         // domyślnie tablica z wynikiem jest ukryta
         resultBoard.hide();
