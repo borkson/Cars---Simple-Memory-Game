@@ -72,7 +72,6 @@ $(function() {
                     gameScore.html(++score + " seconds");
                 }, 1000);
                 hasGameStarted = true;
-
             }
         }
 
